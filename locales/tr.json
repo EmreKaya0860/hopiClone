@@ -1,0 +1,10 @@
+{
+  "welcome.title": "Hoşgeldin",
+  "welcome.description": "Ne zaman istersen, Hopi'nin renkli ve\nkazançlı dünyasına dönebilirsin.",
+  "welcome.buttonTitle": "GİRİŞ YAP",
+  "authemail.title": "Eposta Adresi",
+  "authemail.description": "Eposta adresini girerek\nbaşlayabilirsin",
+  "authpassword.title": "Parolanız",
+  "authpassword.description": "Parolanızı girerek Hopi\ndünyasına adım atabilirsiniz",
+  "auth.buttonTitle": "DEVAM"
+}
