@@ -6,5 +6,12 @@
   "authemail.description": "Eposta adresini girerek\nbaşlayabilirsin",
   "authpassword.title": "Parolanız",
   "authpassword.description": "Parolanızı girerek Hopi\ndünyasına adım atabilirsiniz",
-  "auth.buttonTitle": "DEVAM"
+  "auth.buttonTitle": "DEVAM",
+  "homeScreenBottomTab.home": "Ana Sayfa",
+  "homeScreenBottomTab.categories": "Kategoriler",
+  "homeScreenBottomTab.QR": "QR Kodum",
+  "homeScreenBottomTab.wallet": "Cüzdanım",
+  "homeScreenBottomTab.account": "Hesabım",
+  "categoriesScreenTopTab.offers": "Teklifler",
+  "categoriesScreenTopTab.brands": "Markalar"
 }

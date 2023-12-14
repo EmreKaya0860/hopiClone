@@ -4,25 +4,47 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import HomeScreenTopRoutes from "./HomeScreenTopRoutes";
-import CategoriesScreen from "../screens/CategoriesScreen";
+import CategoriesScreenTopRoutes from "./CategoriesScreenTopRoutes";
 import QRScreen from "../screens/QRScreen";
 import WalletScreen from "../screens/WalletScreen";
 import AccountScreen from "../screens/AccountScreen";
 
+import { useTranslation } from "react-i18next";
+
 const Tab = createBottomTabNavigator();
 
 const HomeScreenRoutes = () => {
+  const { t } = useTranslation();
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "transparent" }}>
-      <Tab.Navigator screenOptions={{ headerShown: false }}>
+      <Tab.Navigator
+        options={{
+          headerStyle: {
+            backgroundColor: "red",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+        }}
+      >
         <Tab.Screen
-          name="HomeScreenTopRoutes"
+          name={t("homeScreenBottomTab.home")}
           component={HomeScreenTopRoutes}
         />
-        <Tab.Screen name="CategoriesScreen" component={CategoriesScreen} />
-        <Tab.Screen name="QRScreen" component={QRScreen} />
-        <Tab.Screen name="WalletScreen" component={WalletScreen} />
-        <Tab.Screen name="AccountScreen" component={AccountScreen} />
+        <Tab.Screen
+          name={t("homeScreenBottomTab.categories")}
+          component={CategoriesScreenTopRoutes}
+        />
+        <Tab.Screen name={t("homeScreenBottomTab.QR")} component={QRScreen} />
+        <Tab.Screen
+          name={t("homeScreenBottomTab.wallet")}
+          component={WalletScreen}
+        />
+        <Tab.Screen
+          name={t("homeScreenBottomTab.account")}
+          component={AccountScreen}
+        />
       </Tab.Navigator>
     </SafeAreaView>
   );
