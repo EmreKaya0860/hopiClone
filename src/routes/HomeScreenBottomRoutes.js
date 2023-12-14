@@ -9,6 +9,8 @@ import QRScreen from "../screens/QRScreen";
 import WalletScreen from "../screens/WalletScreen";
 import AccountScreen from "../screens/AccountScreen";
 
+import { FontAwesome, AntDesign, Ionicons } from "@expo/vector-icons";
+
 import { useTranslation } from "react-i18next";
 
 const Tab = createBottomTabNavigator();
@@ -18,19 +20,50 @@ const HomeScreenRoutes = () => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "transparent" }}>
       <Tab.Navigator
-        options={{
-          headerStyle: {
-            backgroundColor: "red",
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused, color, size }) => {
+            let iconName;
+
+            if (route.name === t("homeScreenBottomTab.home")) {
+              return focused ? (
+                <FontAwesome name="home" size={24} color="black" />
+              ) : (
+                <FontAwesome name="home" size={24} color="gray" />
+              );
+            } else if (route.name === t("homeScreenBottomTab.categories")) {
+              return focused ? (
+                <AntDesign name="appstore1" size={24} color="black" />
+              ) : (
+                <AntDesign name="appstore1" size={24} color="gray" />
+              );
+            } else if (route.name === t("homeScreenBottomTab.QR")) {
+              return focused ? (
+                <FontAwesome name="qrcode" size={24} color="black" />
+              ) : (
+                <FontAwesome name="qrcode" size={24} color="gray" />
+              );
+            } else if (route.name === t("homeScreenBottomTab.wallet")) {
+              return focused ? (
+                <Ionicons name="wallet" size={24} color="black" />
+              ) : (
+                <Ionicons name="wallet" size={24} color="gray" />
+              );
+            } else {
+              return focused ? (
+                <FontAwesome name="user" size={24} color="black" />
+              ) : (
+                <FontAwesome name="user" size={24} color="gray" />
+              );
+            }
           },
-          headerTintColor: "#fff",
-          headerTitleStyle: {
-            fontWeight: "bold",
-          },
-        }}
+          tabBarActiveTintColor: "black",
+          tabBarInactiveTintColor: "gray",
+        })}
       >
         <Tab.Screen
           name={t("homeScreenBottomTab.home")}
           component={HomeScreenTopRoutes}
+          options={{ headerShown: false }}
         />
         <Tab.Screen
           name={t("homeScreenBottomTab.categories")}
