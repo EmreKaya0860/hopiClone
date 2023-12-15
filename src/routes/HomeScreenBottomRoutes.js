@@ -8,6 +8,11 @@ import CategoriesScreenTopRoutes from "./CategoriesScreenTopRoutes";
 import QRScreen from "../screens/QRScreen";
 import WalletScreen from "../screens/WalletScreen";
 import AccountScreen from "../screens/AccountScreen";
+import WalletScreenTopRoutes from "./WalletScreenTopRoutes";
+
+import QRScreenHeader from "../components/QRScreenHeader";
+import WalletScreenHeader from "../components/WalletScreenHeader";
+import AccountScreenHeader from "../components/AccountScreenHeader";
 
 import { FontAwesome, AntDesign, Ionicons } from "@expo/vector-icons";
 
@@ -58,6 +63,11 @@ const HomeScreenRoutes = () => {
           },
           tabBarActiveTintColor: "black",
           tabBarInactiveTintColor: "gray",
+          headerStatusBarHeight: 0,
+          headerStyle: {
+            elevation: 5,
+            shadowColor: "black",
+          },
         })}
       >
         <Tab.Screen
@@ -69,14 +79,32 @@ const HomeScreenRoutes = () => {
           name={t("homeScreenBottomTab.categories")}
           component={CategoriesScreenTopRoutes}
         />
-        <Tab.Screen name={t("homeScreenBottomTab.QR")} component={QRScreen} />
+        <Tab.Screen
+          name={t("homeScreenBottomTab.QR")}
+          component={QRScreen}
+          options={{
+            headerTitle: () => <QRScreenHeader />,
+          }}
+        />
         <Tab.Screen
           name={t("homeScreenBottomTab.wallet")}
-          component={WalletScreen}
+          component={WalletScreenTopRoutes}
+          options={{
+            headerTitleContainerStyle: {
+              width: "100%",
+            },
+            headerTitle: () => <WalletScreenHeader />,
+          }}
         />
         <Tab.Screen
           name={t("homeScreenBottomTab.account")}
           component={AccountScreen}
+          options={{
+            headerTitleContainerStyle: {
+              width: "100%",
+            },
+            headerTitle: () => <AccountScreenHeader />,
+          }}
         />
       </Tab.Navigator>
     </SafeAreaView>

@@ -3,14 +3,15 @@ import React from "react";
 
 import { useTranslation } from "react-i18next";
 
-import OffersScreen from "../screens/OffersScreen";
-import BrandsScreen from "../screens/BrandsScreen";
+import ParacikBalanceScreen from "../screens/ParacikBalanceScreen";
+import TLBalanceScreen from "../screens/TLBalanceScreen";
+import MyCardsScreen from "../screens/MyCardsScreen";
 
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 
 const Tab = createMaterialTopTabNavigator();
 
-const CategoriesScreenTopRoutes = () => {
+const WalletScreenTopRoutes = () => {
   const { t } = useTranslation();
   return (
     <Tab.Navigator
@@ -24,17 +25,21 @@ const CategoriesScreenTopRoutes = () => {
       }}
     >
       <Tab.Screen
-        name={t("categoriesScreenTopTab.offers")}
-        component={OffersScreen}
+        name={t("walletScreenTopTab.paracikBalance")}
+        component={ParacikBalanceScreen}
       />
       <Tab.Screen
-        name={t("categoriesScreenTopTab.brands")}
-        component={BrandsScreen}
+        name={t("walletScreenTopTab.TLAmount")}
+        component={TLBalanceScreen}
+      />
+      <Tab.Screen
+        name={t("walletScreenTopTab.myCards")}
+        component={MyCardsScreen}
       />
     </Tab.Navigator>
   );
 };
 
-export default CategoriesScreenTopRoutes;
+export default WalletScreenTopRoutes;
 
 const styles = StyleSheet.create({});

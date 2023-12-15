@@ -125,6 +125,7 @@ const HopiScreen = () => {
                 position: "absolute",
                 bottom: 10,
                 left: 10,
+                color: "#484848",
               }}
             >
               {t("categories.clothes")}
@@ -144,6 +145,7 @@ const HopiScreen = () => {
                 position: "absolute",
                 bottom: 10,
                 left: 10,
+                color: "#484848",
               }}
             >
               {t("categories.shoe")}
@@ -161,6 +163,7 @@ const HopiScreen = () => {
                 position: "absolute",
                 bottom: 10,
                 left: 10,
+                color: "#484848",
               }}
             >
               {t("categories.sport")}
